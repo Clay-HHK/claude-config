@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(find:*)",
+      "Bash(gh auth:*)",
+      "Bash(brew install:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(git clone:*)",
+      "Bash(bash:*)",
+      "Bash(ls:*)",
+      "Bash(curl:*)",
+      "Bash(echo:*)",
+      "Bash(cp:*)",
+      "Bash(~/.zshrc:*)",
+      "Bash(export:*)",
+      "Bash(python3:*)",
+      "Bash(OBSIDIAN_VAULT_PATH=\"/Users/hanhaoke/Documents/Obsidian Vault\" python3:*)",
+      "WebFetch(domain:arxiv.org)",
+      "Bash(rm:*)",
+      "Bash(python:*)",
+      "Bash(do:*)",
+      "Skill(paper-analyze)",
+      "WebSearch",
+      "WebFetch(domain:www.ijcai.org)",
+      "Bash(claude mcp:*)",
+      "Bash(cat \"/Users/hanhaoke/Downloads/Harness engineering_ leveraging Codex in an agent-first world _ OpenAI.html\" | sed 's/<[^>]*>//g' | sed '/^$/d' | sed 's/^[[:space:]]*//' | grep -v '^$' | head -800)",
+      "Bash(cat \"/Users/hanhaoke/Downloads/Harness engineering_ leveraging Codex in an agent-first world _ OpenAI.html\" | sed 's/<[^>]*>//g' | sed 's/&nbsp;/ /g; s/&amp;/\\\\&/g; s/&lt;/</g; s/&gt;/>/g; s/&quot;/\"/g' | tr -s ' \\\\n' '\\\\n' | awk 'length > 20' | head -500)",
+      "Bash(ls -1 /Users/hanhaoke/.claude/skills/ | wc -l && echo \"---\" && ls -1 /Users/hanhaoke/.claude/commands/ | grep -v \"^sc$\" | wc -l)",
+      "Bash(gh api:*)",
+      "Bash(node:*)",
+      "Bash(~/.claude/scripts/harness-health-check.js)",
+      "Bash(tmux list-sessions:*)",
+      "Bash(npm --version)",
+      "Bash(npm install:*)",
+      "Bash(tsc --version)",
+      "Bash(gh repo:*)",
+      "Bash(lsof -nP -iTCP@10.72.63.165)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

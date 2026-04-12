@@ -1,0 +1,819 @@
+{
+  "target_date": "2026-03-05",
+  "date_windows": {
+    "recent_30d": {
+      "start": "2026-02-03",
+      "end": "2026-03-05"
+    },
+    "past_year": {
+      "start": "2025-03-05",
+      "end": "2026-02-02"
+    }
+  },
+  "total_recent": 200,
+  "total_hot": 15,
+  "total_unique": 735,
+  "top_papers": [
+    {
+      "id": "http://arxiv.org/abs/2602.14158v1",
+      "title": "A Multi-Agent Framework for Medical AI: Leveraging Fine-Tuned GPT, LLaMA, and DeepSeek R1 for Evidence-Based and Bias-Aware Clinical Query Processing",
+      "summary": "Large language models (LLMs) show promise for healthcare question answering, but clinical use is limited by weak verification, insufficient evidence grounding, and unreliable confidence signalling. We propose a multi-agent medical QA framework that combines complementary LLMs with evidence retrieval, uncertainty estimation, and bias checks to improve answer reliability. Our approach has two phases. First, we fine-tune three representative LLM families (GPT, LLaMA, and DeepSeek R1) on MedQuAD-derived medical QA data (20k+ question-answer pairs across multiple NIH domains) and benchmark generation quality. DeepSeek R1 achieves the strongest scores (ROUGE-1 0.536 +- 0.04; ROUGE-2 0.226 +-0.03; BLEU 0.098 -+ 0.018) and substantially outperforms the specialised biomedical baseline BioGPT in zero-shot evaluation. Second, we implement a modular multi-agent pipeline in which a Clinical Reasoning agent (fine-tuned LLaMA) produces structured explanations, an Evidence Retrieval agent queries PubMed to ground responses in recent literature, and a Refinement agent (DeepSeek R1) improves clarity and factual consistency; an optional human validation path is triggered for high-risk or high-uncertainty cases. Safety mechanisms include Monte Carlo dropout and perplexity-based uncertainty scoring, plus lexical and sentiment-based bias detection supported by LIME/SHAP-based analyses. In evaluation, the full system achieves 87% accuracy with relevance around 0.80, and evidence augmentation reduces uncertainty (perplexity 4.13) compared to base responses, with mean end-to-end latency of 36.5 seconds under the reported configuration. Overall, the results indicate that agent specialisation and verification layers can mitigate key single-model limitations and provide a practical, extensible design for evidence-based and bias-aware medical AI.",
+      "authors": [
+        "Naeimeh Nourmohammadi",
+        "Md Meem Hossain",
+        "The Anh Han",
+        "Safina Showkat Ara",
+        "Zia Ush Shamszaman"
+      ],
+      "published": "2026-02-15T14:17:27Z",
+      "published_date": "2026-02-15 14:17:27+00:00",
+      "updated": "2026-02-15T14:17:27Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.14158v1",
+      "url": "http://arxiv.org/abs/2602.14158v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 4.5,
+        "recency": 3.0,
+        "popularity": 2.3,
+        "quality": 2.3,
+        "recommendation": 11.07
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "agent framework",
+        "cs.AI",
+        "cs.MA",
+        "cs.CL"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.03053v1",
+      "title": "MAS-ProVe: Understanding the Process Verification of Multi-Agent Systems",
+      "summary": "Multi-Agent Systems (MAS) built on Large Language Models (LLMs) often exhibit high variance in their reasoning trajectories. Process verification, which evaluates intermediate steps in trajectories, has shown promise in general reasoning settings, and has been suggested as a potential tool for guiding coordination of MAS; however, its actual effectiveness in MAS remains unclear. To fill this gap, we present MAS-ProVe, a systematic empirical study of process verification for multi-agent systems (MAS). Our study spans three verification paradigms (LLM-as-a-Judge, reward models, and process reward models), evaluated across two levels of verification granularity (agent-level and iteration-level). We further examine five representative verifiers and four context management strategies, and conduct experiments over six diverse MAS frameworks on multiple reasoning benchmarks. We find that process-level verification does not consistently improve performance and frequently exhibits high variance, highlighting the difficulty of reliably evaluating partial multi-agent trajectories. Among the methods studied, LLM-as-a-Judge generally outperforms reward-based approaches, with trained judges surpassing general-purpose LLMs. We further observe a small performance gap between LLMs acting as judges and as single agents, and identify a context-length-performance trade-off in verification. Overall, our results suggest that effective and robust process verification for MAS remains an open challenge, requiring further advances beyond current paradigms. Code is available at https://github.com/Wang-ML-Lab/MAS-ProVe.",
+      "authors": [
+        "Vishal Venkataramani",
+        "Haizhou Shi",
+        "Zixuan Ke",
+        "Austin Xu",
+        "Xiaoxiao He",
+        "Yingbo Zhou",
+        "Semih Yavuz",
+        "Hao Wang",
+        "Shafiq Joty"
+      ],
+      "published": "2026-02-03T03:30:36Z",
+      "published_date": "2026-02-03 03:30:36+00:00",
+      "updated": "2026-02-03T03:30:36Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.03053v1",
+      "url": "http://arxiv.org/abs/2602.03053v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 4.0,
+        "recency": 3.0,
+        "popularity": 2.3,
+        "quality": 2.3,
+        "recommendation": 10.4
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "cs.AI",
+        "cs.MA",
+        "cs.CL"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.02153v1",
+      "title": "Scaling Retrieval Augmented Generation with RAG Fusion: Lessons from an Industry Deployment",
+      "summary": "Retrieval-Augmented Generation (RAG) systems commonly adopt retrieval fusion techniques such as multi-query retrieval and reciprocal rank fusion (RRF) to increase document recall, under the assumption that higher recall leads to better answer quality. While these methods show consistent gains in isolated retrieval benchmarks, their effectiveness under realistic production constraints remains underexplored. In this work, we evaluate retrieval fusion in a production-style RAG pipeline operating over an enterprise knowledge base, with fixed retrieval depth, re-ranking budgets, and latency constraints.\n  Across multiple fusion configurations, we find that retrieval fusion does increase raw recall, but these gains are largely neutralized after re-ranking and truncation. In our setting, fusion variants fail to outperform single-query baselines on KB-level Top-$k$ accuracy, with Hit@10 decreasing from $0.51$ to $0.48$ in several configurations. Moreover, fusion introduces additional latency overhead due to query rewriting and larger candidate sets, without corresponding improvements in downstream effectiveness.\n  Our analysis suggests that recall-oriented fusion techniques exhibit diminishing returns once realistic re-ranking limits and context budgets are applied. We conclude that retrieval-level improvements do not reliably translate into end-to-end gains in production RAG systems, and argue for evaluation frameworks that jointly consider retrieval quality, system efficiency, and downstream impact.",
+      "authors": [
+        "Luigi Medrano",
+        "Arush Verma",
+        "Mukul Chhabra"
+      ],
+      "published": "2026-03-02T18:15:09Z",
+      "published_date": "2026-03-02 18:15:09+00:00",
+      "updated": "2026-03-02T18:15:09Z",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2603.02153v1",
+      "url": "http://arxiv.org/abs/2603.02153v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 4.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.0,
+        "recommendation": 10.0
+      },
+      "matched_domain": "GraphRAG",
+      "matched_keywords": [
+        "retrieval augmented generation",
+        "RAG",
+        "cs.CL",
+        "cs.IR",
+        "cs.AI"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.09642v1",
+      "title": "MATA: Multi-Agent Framework for Reliable and Flexible Table Question Answering",
+      "summary": "Recent advances in Large Language Models (LLMs) have significantly improved table understanding tasks such as Table Question Answering (TableQA), yet challenges remain in ensuring reliability, scalability, and efficiency, especially in resource-constrained or privacy-sensitive environments. In this paper, we introduce MATA, a multi-agent TableQA framework that leverages multiple complementary reasoning paths and a set of tools built with small language models. MATA generates candidate answers through diverse reasoning styles for a given table and question, then refines or selects the optimal answer with the help of these tools. Furthermore, it incorporates an algorithm designed to minimize expensive LLM agent calls, enhancing overall efficiency. MATA maintains strong performance with small, open-source models and adapts easily across various LLM types. Extensive experiments on two benchmarks of varying difficulty with ten different LLMs demonstrate that MATA achieves state-of-the-art accuracy and highly efficient reasoning while avoiding excessive LLM inference. Our results highlight that careful orchestration of multiple reasoning pathways yields scalable and reliable TableQA. The code is available at https://github.com/AIDAS-Lab/MATA.",
+      "authors": [
+        "Sieun Hyeon",
+        "Jusang Oh",
+        "Sunghwan Steve Cho",
+        "Jaeyoung Do"
+      ],
+      "published": "2026-02-10T10:43:02Z",
+      "published_date": "2026-02-10 10:43:02+00:00",
+      "updated": "2026-02-10T10:43:02Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.09642v1",
+      "url": "http://arxiv.org/abs/2602.09642v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.8,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.0,
+        "recommendation": 9.73
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "LLM agent",
+        "agent framework",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.19317v1",
+      "title": "Learning to Reason for Multi-Step Retrieval of Personal Context in Personalized Question Answering",
+      "summary": "Personalization in Question Answering (QA) requires answers that are both accurate and aligned with users' background, preferences, and historical context. Existing state-of-the-art methods primarily rely on retrieval-augmented generation (RAG) solutions that construct personal context by retrieving relevant items from the user's profile. Existing methods use the user's query directly to retrieve personal documents, and such strategies often lead to surface-level personalization. We propose PR2 (Personalized Retrieval-Augmented Reasoning), a reinforcement learning framework that integrates reasoning and retrieval from personal context for personalization. PR2 learns adaptive retrieval-reasoning policies, determining when to retrieve, what evidence to retrieve from user profiles, and how to incorporate it into intermediate reasoning steps. By optimizing multi-turn reasoning trajectories under a personalized reward function, the framework reinforces reasoning paths that better align with user-specific preferences and contextual signals reflected by the reward model. Extensive experiments on the LaMP-QA benchmark using three LLMs show that PR2 consistently outperforms strong baselines, achieving an average relative improvement of 8.8%-12% in personalized QA.",
+      "authors": [
+        "Maryam Amirizaniani",
+        "Alireza Salemi",
+        "Hamed Zamani"
+      ],
+      "published": "2026-02-22T19:43:43Z",
+      "published_date": "2026-02-22 19:43:43+00:00",
+      "updated": "2026-02-22T19:43:43Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.19317v1",
+      "url": "http://arxiv.org/abs/2602.19317v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.3,
+        "recency": 3.0,
+        "popularity": 2.3,
+        "quality": 2.3,
+        "recommendation": 9.47
+      },
+      "matched_domain": "GraphRAG",
+      "matched_keywords": [
+        "RAG",
+        "cs.CL",
+        "cs.IR",
+        "cs.AI"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.00623v1",
+      "title": "TraceSIR: A Multi-Agent Framework for Structured Analysis and Reporting of Agentic Execution Traces",
+      "summary": "Agentic systems augment large language models with external tools and iterative decision making, enabling complex tasks such as deep research, function calling, and coding. However, their long and intricate execution traces make failure diagnosis and root cause analysis extremely challenging. Manual inspection does not scale, while directly applying LLMs to raw traces is hindered by input length limits and unreliable reasoning. Focusing solely on final task outcomes further discards critical behavioral information required for accurate issue localization. To address these issues, we propose TraceSIR, a multi-agent framework for structured analysis and reporting of agentic execution traces. TraceSIR coordinates three specialized agents: (1) StructureAgent, which introduces a novel abstraction format, TraceFormat, to compress execution traces while preserving essential behavioral information; (2) InsightAgent, which performs fine-grained diagnosis including issue localization, root cause analysis, and optimization suggestions; (3) ReportAgent, which aggregates insights across task instances and generates comprehensive analysis reports. To evaluate TraceSIR, we construct TraceBench, covering three real-world agentic scenarios, and introduce ReportEval, an evaluation protocol for assessing the quality and usability of analysis reports aligned with industry needs. Experiments show that TraceSIR consistently produces coherent, informative, and actionable reports, significantly outperforming existing approaches across all evaluation dimensions. Our project and video are publicly available at https://github.com/SHU-XUN/TraceSIR.",
+      "authors": [
+        "Shu-Xun Yang",
+        "Cunxiang Wang",
+        "Haoke Zhang",
+        "Wenbo Yu",
+        "Lindong Wu",
+        "Jiayi Gui",
+        "Dayong Yang",
+        "Yukuo Cen",
+        "Zhuoer Feng",
+        "Bosi Wen",
+        "Yidong Wang",
+        "Lucen Zhong",
+        "Jiamin Ren",
+        "Linfeng Zhang",
+        "Jie Tang"
+      ],
+      "published": "2026-02-28T12:33:24Z",
+      "published_date": "2026-02-28 12:33:24+00:00",
+      "updated": "2026-02-28T12:33:24Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2603.00623v1",
+      "url": "http://arxiv.org/abs/2603.00623v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 4.0,
+        "recency": 3.0,
+        "popularity": 1.6,
+        "quality": 1.6,
+        "recommendation": 9.47
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "agentic",
+        "agent framework",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.17875v1",
+      "title": "MultiVer: Zero-Shot Multi-Agent Vulnerability Detection",
+      "summary": "We present MultiVer, a zero-shot multi-agent system for vulnerability detection that achieves state-of-the-art recall without fine-tuning. A four-agent ensemble (security, correctness, performance, style) with union voting achieves 82.7% recall on PyVul, exceeding fine-tuned GPT-3.5 (81.3%) by 1.4 percentage points -- the first zeroshot system to surpass fine-tuned performance on this benchmark. On SecurityEval, the same architecture achieves 91.7% detection rate, matching specialized systems. The recall improvement comes at a precision cost: 48.8% precision versus 63.9% for fine-tuned baselines, yielding 61.4% F1. Ablation experiments isolate component contributions: the multi-agent ensemble adds 17 percentage points recall over single-agent security analysis. These results demonstrate that for security applications where false negatives are costlier than false positives, zero-shot multi-agent ensembles can match and exceed fine-tuned models on the metric that matters most.",
+      "authors": [
+        "Shreshth Rajan"
+      ],
+      "published": "2026-02-19T22:20:17Z",
+      "published_date": "2026-02-19 22:20:17+00:00",
+      "updated": "2026-02-19T22:20:17Z",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.17875v1",
+      "url": "http://arxiv.org/abs/2602.17875v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.3,
+        "recency": 3.0,
+        "popularity": 2.3,
+        "quality": 2.3,
+        "recommendation": 9.47
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "agent security",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.03695v1",
+      "title": "Agent Primitives: Reusable Latent Building Blocks for Multi-Agent Systems",
+      "summary": "While existing multi-agent systems (MAS) can handle complex problems by enabling collaboration among multiple agents, they are often highly task-specific, relying on manually crafted agent roles and interaction prompts, which leads to increased architectural complexity and limited reusability across tasks. Moreover, most MAS communicate primarily through natural language, making them vulnerable to error accumulation and instability in long-context, multi-stage interactions within internal agent histories.\n  In this work, we propose \\textbf{Agent Primitives}, a set of reusable latent building blocks for LLM-based MAS. Inspired by neural network design, where complex models are built from reusable components, we observe that many existing MAS architectures can be decomposed into a small number of recurring internal computation patterns. Based on this observation, we instantiate three primitives: Review, Voting and Selection, and Planning and Execution. All primitives communicate internally via key-value (KV) cache, which improves both robustness and efficiency by mitigating information degradation across multi-stage interactions. To enable automatic system construction, an Organizer agent selects and composes primitives for each query, guided by a lightweight knowledge pool of previously successful configurations, forming a primitive-based MAS.\n  Experiments show that primitives-based MAS improve average accuracy by 12.0-16.5\\% over single-agent baselines, reduce token usage and inference latency by approximately 3$\\times$-4$\\times$ compared to text-based MAS, while incurring only 1.3$\\times$-1.6$\\times$ overhead relative to single-agent inference and providing more stable performance across model backbones.",
+      "authors": [
+        "Haibo Jin",
+        "Kuang Peng",
+        "Ye Yu",
+        "Xiaopeng Yuan",
+        "Haohan Wang"
+      ],
+      "published": "2026-02-03T16:17:53Z",
+      "published_date": "2026-02-03 16:17:53+00:00",
+      "updated": "2026-02-03T16:17:53Z",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.03695v1",
+      "url": "http://arxiv.org/abs/2602.03695v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 4.0,
+        "recency": 3.0,
+        "popularity": 1.6,
+        "quality": 1.6,
+        "recommendation": 9.47
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "cs.AI",
+        "cs.MA",
+        "cs.CL"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.12662v1",
+      "title": "Think Fast and Slow: Step-Level Cognitive Depth Adaptation for LLM Agents",
+      "summary": "Large language models (LLMs) are increasingly deployed as autonomous agents for multi-turn decision-making tasks. However, current agents typically rely on fixed cognitive patterns: non-thinking models generate immediate responses, while thinking models engage in deep reasoning uniformly. This rigidity is inefficient for long-horizon tasks, where cognitive demands vary significantly from step to step, with some requiring strategic planning and others only routine execution. In this paper, we introduce CogRouter, a framework that trains agents to dynamically adapt cognitive depth at each step. Grounded in ACT-R theory, we design four hierarchical cognitive levels ranging from instinctive responses to strategic planning. Our two-stage training approach includes Cognition-aware Supervised Fine-tuning (CoSFT) to instill stable level-specific patterns, and Cognition-aware Policy Optimization (CoPO) for step-level credit assignment via confidence-aware advantage reweighting. The key insight is that appropriate cognitive depth should maximize the confidence of the resulting action. Experiments on ALFWorld and ScienceWorld demonstrate that CogRouter achieves state-of-the-art performance with superior efficiency. With Qwen2.5-7B, it reaches an 82.3% success rate, outperforming GPT-4o (+40.3%), OpenAI-o3 (+18.3%), and GRPO (+14.0%), while using 62% fewer tokens.",
+      "authors": [
+        "Ruihan Yang",
+        "Fanghua Ye",
+        "Xiang We",
+        "Ruoqing Zhao",
+        "Kang Luo",
+        "Xinbo Xu",
+        "Bo Zhao",
+        "Ruotian Ma",
+        "Shanyi Wang",
+        "Zhaopeng Tu",
+        "Xiaolong Li",
+        "Deqing Yang",
+        " Linus"
+      ],
+      "published": "2026-02-13T06:52:09Z",
+      "published_date": "2026-02-13 06:52:09+00:00",
+      "updated": "2026-02-13T06:52:09Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.12662v1",
+      "url": "http://arxiv.org/abs/2602.12662v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.3,
+        "recency": 3.0,
+        "popularity": 2.3,
+        "quality": 2.3,
+        "recommendation": 9.47
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "autonomous agent",
+        "LLM agent",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.07839v1",
+      "title": "TodoEvolve: Learning to Architect Agent Planning Systems",
+      "summary": "Planning has become a central capability for contemporary agent systems in navigating complex, long-horizon tasks, yet existing approaches predominantly rely on fixed, hand-crafted planning structures that lack the flexibility to adapt to the structural diversity of open-ended problems. To address this limitation, we introduce TodoEvolve, a meta-planning paradigm that autonomously synthesizes and dynamically revises task-specific planning architectures. Specifically, we first construct PlanFactory, a modular design space that standardizes diverse planning paradigms within a unified codebase encompassing topology, initialization, adaptation, and navigation, thereby providing a common interface for heterogeneous planning patterns. Leveraging PlanFactory, we collect high-quality planning trajectories and train Todo-14B via \\textit{Impedance-Guided Preference Optimization} (IGPO), a multi-objective reinforcement learning objective that encourages the generation of planning systems that are performant, stable, and token-efficient across arbitrary tasks and agent backbones. Empirical evaluations on five agentic benchmarks demonstrate that TodoEvolve consistently surpasses carefully engineered planning modules while maintaining economical API costs and runtime overhead.",
+      "authors": [
+        "Jiaxi Liu",
+        "Yanzuo Jiang",
+        "Guibin Zhang",
+        "Zihan Zhang",
+        "Heng Chang",
+        "Zhenfei Yin",
+        "Qibing Ren",
+        "Junchi Yan"
+      ],
+      "published": "2026-02-08T06:37:01Z",
+      "published_date": "2026-02-08 06:37:01+00:00",
+      "updated": "2026-02-08T06:37:01Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.07839v1",
+      "url": "http://arxiv.org/abs/2602.07839v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.3,
+        "recency": 3.0,
+        "popularity": 2.3,
+        "quality": 2.3,
+        "recommendation": 9.47
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "agent planning",
+        "agentic",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.03292v1",
+      "title": "From Conflict to Consensus: Boosting Medical Reasoning via Multi-Round Agentic RAG",
+      "summary": "Large Language Models (LLMs) exhibit high reasoning capacity in medical question-answering, but their tendency to produce hallucinations and outdated knowledge poses critical risks in healthcare fields. While Retrieval-Augmented Generation (RAG) mitigates these issues, existing methods rely on noisy token-level signals and lack the multi-round refinement required for complex reasoning. In the paper, we propose **MA-RAG** (**M**ulti-Round **A**gentic RAG), a framework that facilitates test-time scaling for complex medical reasoning by iteratively evolving both external evidence and internal reasoning history within an agentic refinement loop. At each round, the agent transforms semantic **conflict** among candidate responses into actionable queries to retrieve external evidence, while optimizing history reasoning traces to mitigate long-context degradation. MA-RAG extends the *self-consistency* principle by leveraging the lack of consistency as a proactive signal for multi-round agentic reasoning and retrieval, and mirrors a *boosting* mechanism that iteratively minimizes the residual error toward a stable, high-fidelity medical **consensus**. Extensive evaluations across 7 medical Q&A benchmarks show that MA-RAG consistently surpasses competitive inference-time scaling and RAG baselines, delivering **substantial +6.8 points** on average accuracy over the backbone model. Our code is available at [this url](https://github.com/NJU-RL/MA-RAG).",
+      "authors": [
+        "Wenhao Wu",
+        "Zhentao Tang",
+        "Yafu Li",
+        "Shixiong Kai",
+        "Mingxuan Yuan",
+        "Zhenhong Sun",
+        "Chunlin Chen",
+        "Zhi Wang"
+      ],
+      "published": "2026-02-06T08:25:30Z",
+      "published_date": "2026-02-06 08:25:30+00:00",
+      "updated": "2026-02-06T08:25:30Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2603.03292v1",
+      "url": "http://arxiv.org/abs/2603.03292v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.5,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.0,
+        "recommendation": 9.33
+      },
+      "matched_domain": "GraphRAG",
+      "matched_keywords": [
+        "RAG",
+        "cs.CL",
+        "cs.IR",
+        "cs.AI"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.16873v1",
+      "title": "AdaptOrch: Task-Adaptive Multi-Agent Orchestration in the Era of LLM Performance Convergence",
+      "summary": "As large language models from diverse providers converge toward comparable benchmark performance, the traditional paradigm of selecting a single best model per task yields diminishing returns. We argue that orchestration topology -- the structural composition of how multiple agents are coordinated, parallelized, and synthesized -- now dominates system-level performance over individual model capability. We present AdaptOrch, a formal framework for task-adaptive multi-agent orchestration that dynamically selects among four canonical topologies (parallel, sequential, hierarchical, and hybrid) based on task dependency graphs and empirically derived domain characteristics. Our framework introduces three key contributions: (1) a Performance Convergence Scaling Law, formalizing conditions under which orchestration selection outweighs model selection; (2) a Topology Routing Algorithm that maps task decomposition DAGs to optimal orchestration patterns in O(|V| + |E|) time; and (3) an Adaptive Synthesis Protocol with provable termination guarantees and heuristic consistency scoring for parallel agent outputs. We validate AdaptOrch across coding (SWE-bench), reasoning (GPQA), and retrieval-augmented generation tasks, demonstrating that topology-aware orchestration achieves 12-23% improvement over static single-topology baselines, even when using identical underlying models. Our results establish orchestration design as a first-class optimization target independent of model scaling.",
+      "authors": [
+        "Geunbin Yu"
+      ],
+      "published": "2026-02-18T21:00:05Z",
+      "published_date": "2026-02-18 21:00:05+00:00",
+      "updated": "2026-02-18T21:00:05Z",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.16873v1",
+      "url": "http://arxiv.org/abs/2602.16873v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.5,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.0,
+        "recommendation": 9.33
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "agent orchestration",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.18650v1",
+      "title": "NutriOrion: A Hierarchical Multi-Agent Framework for Personalized Nutrition Intervention Grounded in Clinical Guidelines",
+      "summary": "Personalized nutrition intervention for patients with multimorbidity is critical for improving health outcomes, yet remains challenging because it requires the simultaneous integration of heterogeneous clinical conditions, medications, and dietary guidelines. Single-agent large language models (LLMs) often suffer from context overload and attention dilution when processing such high-dimensional patient profiles. We introduce NutriOrion, a hierarchical multi-agent framework with a parallel-then-sequential reasoning topology. NutriOrion decomposes nutrition planning into specialized domain agents with isolated contexts to mitigate anchoring bias, followed by a conditional refinement stage. The framework includes a multi-objective prioritization algorithm to resolve conflicting dietary requirements and a safety constraint mechanism that injects pharmacological contraindications as hard negative constraints during synthesis, ensuring clinical validity by construction rather than post-hoc filtering. For clinical interoperability, NutriOrion maps synthesized insights into the ADIME standard and FHIR R4 resources. Evaluated on 330 stroke patients with multimorbidity, NutriOrion outperforms multiple baselines, including GPT-4.1 and alternative multi-agent architectures. It achieves a 12.1 percent drug-food interaction violation rate, demonstrates strong personalization with negative correlations (-0.26 to -0.35) between patient biomarkers and recommended risk nutrients, and yields clinically meaningful dietary improvements, including a 167 percent increase in fiber and a 27 percent increase in potassium, alongside reductions in sodium (9 percent) and sugars (12 percent).",
+      "authors": [
+        "Junwei Wu",
+        "Runze Yan",
+        "Hanqi Luo",
+        "Darren Liu",
+        "Minxiao Wang",
+        "Kimberly L. Townsend",
+        "Lydia S. Hartwig",
+        "Derek Milketinas",
+        "Xiao Hu",
+        "Carl Yang"
+      ],
+      "published": "2026-02-20T22:55:29Z",
+      "published_date": "2026-02-20 22:55:29+00:00",
+      "updated": "2026-02-20T22:55:29Z",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.18650v1",
+      "url": "http://arxiv.org/abs/2602.18650v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.5,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.0,
+        "recommendation": 9.33
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "agent framework",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.16037v1",
+      "title": "Optimization Instability in Autonomous Agentic Workflows for Clinical Symptom Detection",
+      "summary": "Autonomous agentic workflows that iteratively refine their own behavior hold considerable promise, yet their failure modes remain poorly characterized. We investigate optimization instability, a phenomenon in which continued autonomous improvement paradoxically degrades classifier performance, using Pythia, an open-source framework for automated prompt optimization. Evaluating three clinical symptoms with varying prevalence (shortness of breath at 23%, chest pain at 12%, and Long COVID brain fog at 3%), we observed that validation sensitivity oscillated between 1.0 and 0.0 across iterations, with severity inversely proportional to class prevalence. At 3% prevalence, the system achieved 95% accuracy while detecting zero positive cases, a failure mode obscured by standard evaluation metrics. We evaluated two interventions: a guiding agent that actively redirected optimization, amplifying overfitting rather than correcting it, and a selector agent that retrospectively identified the best-performing iteration successfully prevented catastrophic failure. With selector agent oversight, the system outperformed expert-curated lexicons on brain fog detection by 331% (F1) and chest pain by 7%, despite requiring only a single natural language term as input. These findings characterize a critical failure mode of autonomous AI systems and demonstrate that retrospective selection outperforms active intervention for stabilization in low-prevalence classification tasks.",
+      "authors": [
+        "Cameron Cagan",
+        "Pedram Fard",
+        "Jiazi Tian",
+        "Jingya Cheng",
+        "Shawn N. Murphy",
+        "Hossein Estiri"
+      ],
+      "published": "2026-02-17T21:45:20Z",
+      "published_date": "2026-02-17 21:45:20+00:00",
+      "updated": "2026-02-17T21:45:20Z",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.16037v1",
+      "url": "http://arxiv.org/abs/2602.16037v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.5,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.0,
+        "recommendation": 9.33
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "autonomous agent",
+        "agentic",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.03808v1",
+      "title": "Enhancing Imbalanced Node Classification via Curriculum-Guided Feature Learning and Three-Stage Attention Network",
+      "summary": "Imbalanced node classification in graph neural networks (GNNs) happens when some labels are much more common than others, which causes the model to learn unfairly and perform badly on the less common classes. To solve this problem, we propose a Curriculum-Guided Feature Learning and Three-Stage Attention Network (CL3AN-GNN), a learning network that uses a three-step attention system (Engage, Enact, Embed) similar to how humans learn. The model begins by engaging with structurally simpler features, defined as (1) local neighbourhood patterns (1-hop), (2) low-degree node attributes, and (3) class-separable node pairs identified via initial graph convolutional networks and graph attention networks (GCN and GAT) embeddings. This foundation enables stable early learning despite label skew. The Enact stage then addresses complicated aspects: (1) connections that require multiple steps, (2) edges that connect different types of nodes, and (3) nodes at the edges of minority classes by using adjustable attention weights. Finally, Embed consolidates these features via iterative message passing and curriculum-aligned loss weighting. We evaluate CL3AN-GNN on eight Open Graph Benchmark datasets spanning social, biological, and citation networks. Experiments show consistent improvements across all datasets in accuracy, F1-score, and AUC over recent state-of-the-art methods. The model's step-by-step method works well with different types of graph datasets, showing quicker results than training everything at once, better performance on new, imbalanced graphs, and clear explanations of each step using gradient stability and attention correlation learning curves. This work provides both a theoretically grounded framework for curriculum learning in GNNs and practical evidence of its effectiveness against imbalances, validated through metrics, convergence speeds, and generalisation tests.",
+      "authors": [
+        "Abdul Joseph Fofanah",
+        "Lian Wen",
+        "David Chen",
+        "Shaoyang Zhang"
+      ],
+      "published": "2026-02-03T18:10:40Z",
+      "published_date": "2026-02-03 18:10:40+00:00",
+      "updated": "2026-02-03T18:10:40Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.03808v1",
+      "url": "http://arxiv.org/abs/2602.03808v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.4,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.0,
+        "recommendation": 9.2
+      },
+      "matched_domain": "图学习",
+      "matched_keywords": [
+        "graph neural network",
+        "GNN",
+        "node classification",
+        "message passing",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.19622v1",
+      "title": "VecFormer: Towards Efficient and Generalizable Graph Transformer with Graph Token Attention",
+      "summary": "Graph Transformer has demonstrated impressive capabilities in the field of graph representation learning. However, existing approaches face two critical challenges: (1) most models suffer from exponentially increasing computational complexity, making it difficult to scale to large graphs; (2) attention mechanisms based on node-level operations limit the flexibility of the model and result in poor generalization performance in out-of-distribution (OOD) scenarios. To address these issues, we propose \\textbf{VecFormer} (the \\textbf{Vec}tor Quantized Graph Trans\\textbf{former}), an efficient and highly generalizable model for node classification, particularly under OOD settings. VecFormer adopts a two-stage training paradigm. In the first stage, two codebooks are used to reconstruct the node features and the graph structure, aiming to learn the rich semantic \\texttt{Graph Codes}. In the second stage, attention mechanisms are performed at the \\texttt{Graph Token} level based on the transformed cross codebook, reducing computational complexity while enhancing the model's generalization capability. Extensive experiments on datasets of various sizes demonstrate that VecFormer outperforms the existing Graph Transformer in both performance and speed.",
+      "authors": [
+        "Jingbo Zhou",
+        "Jun Xia",
+        "Siyuan Li",
+        "Yunfan Liu",
+        "Wenjun Wang",
+        "Yufei Huang",
+        "Changxi Chi",
+        "Mutian Hong",
+        "Zhuoli Ouyang",
+        "Shu Wang",
+        "Zhongqi Wang",
+        "Xingyu Wu",
+        "Chang Yu",
+        "Stan Z. Li"
+      ],
+      "published": "2026-02-23T09:10:39Z",
+      "published_date": "2026-02-23 09:10:39+00:00",
+      "updated": "2026-02-23T09:10:39Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.19622v1",
+      "url": "http://arxiv.org/abs/2602.19622v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.1,
+        "recency": 3.0,
+        "popularity": 2.3,
+        "quality": 2.3,
+        "recommendation": 9.2
+      },
+      "matched_domain": "图学习",
+      "matched_keywords": [
+        "graph transformer",
+        "node classification",
+        "graph representation learning",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.14239v1",
+      "title": "A Hybrid TGN-SEAL Model for Dynamic Graph Link Prediction",
+      "summary": "Predicting links in sparse, continuously evolving networks is a central challenge in network science. Conventional heuristic methods and deep learning models, including Graph Neural Networks (GNNs), are typically designed for static graphs and thus struggle to capture temporal dependencies. Snapshot-based techniques partially address this issue but often encounter data sparsity and class imbalance, particularly in networks with transient interactions such as telecommunication call detail records (CDRs). Temporal Graph Networks (TGNs) model dynamic graphs by updating node embeddings over time; however, their predictive accuracy under sparse conditions remains limited. In this study, we improve the TGN framework by extracting enclosing subgraphs around candidate links, enabling the model to jointly learn structural and temporal information. Experiments on a sparse CDR dataset show that our approach increases average precision by 2.6% over standard TGNs, demonstrating the advantages of integrating local topology for robust link prediction in dynamic networks.",
+      "authors": [
+        "Nafiseh Sadat Sajadi",
+        "Behnam Bahrak",
+        "Mahdi Jafari Siavoshani"
+      ],
+      "published": "2026-02-15T17:16:47Z",
+      "published_date": "2026-02-15 17:16:47+00:00",
+      "updated": "2026-02-15T17:16:47Z",
+      "categories": [
+        "cs.SI",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.14239v1",
+      "url": "http://arxiv.org/abs/2602.14239v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 4.1,
+        "recency": 3.0,
+        "popularity": 1.3,
+        "quality": 1.3,
+        "recommendation": 9.2
+      },
+      "matched_domain": "图学习",
+      "matched_keywords": [
+        "graph neural network",
+        "GNN",
+        "link prediction",
+        "cs.LG",
+        "cs.AI",
+        "cs.SI"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.06733v1",
+      "title": "Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding",
+      "summary": "Multi-Agent Path Finding (MAPF) is a representative multi-agent coordination problem, where multiple agents are required to navigate to their respective goals without collisions. Solving MAPF optimally is known to be NP-hard, leading to the adoption of learning-based approaches to alleviate the online computational burden. Prevailing approaches, such as Graph Neural Networks (GNNs), are typically constrained to pairwise message passing between agents. However, this limitation leads to suboptimal behaviours and critical issues, such as attention dilution, particularly in dense environments where group (i.e. beyond just two agents) coordination is most critical. Despite the importance of such higher-order interactions, existing approaches have not been able to fully explore them. To address this representational bottleneck, we introduce HMAGAT (Hypergraph Multi-Agent Attention Network), a novel architecture that leverages attentional mechanisms over directed hypergraphs to explicitly capture group dynamics. Empirically, HMAGAT establishes a new state-of-the-art among learning-based MAPF solvers: e.g., despite having just 1M parameters and being trained on 100$\\times$ less data, it outperforms the current SoTA 85M parameter model. Through detailed analysis of HMAGAT's attention values, we demonstrate how hypergraph representations mitigate the attention dilution inherent in GNNs and capture complex interactions where pairwise methods fail. Our results illustrate that appropriate inductive biases are often more critical than the training data size or sheer parameter count for multi-agent problems.",
+      "authors": [
+        "Rishabh Jain",
+        "Keisuke Okumura",
+        "Michael Amir",
+        "Pietro Lio",
+        "Amanda Prorok"
+      ],
+      "published": "2026-02-06T14:28:54Z",
+      "published_date": "2026-02-06 14:28:54+00:00",
+      "updated": "2026-02-06T14:28:54Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.06733v1",
+      "url": "http://arxiv.org/abs/2602.06733v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.1,
+        "recency": 3.0,
+        "popularity": 2.3,
+        "quality": 2.3,
+        "recommendation": 9.2
+      },
+      "matched_domain": "图学习",
+      "matched_keywords": [
+        "graph neural network",
+        "GNN",
+        "message passing",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2603.02637v1",
+      "title": "StitchCUDA: An Automated Multi-Agents End-to-End GPU Programing Framework with Rubric-based Agentic Reinforcement Learning",
+      "summary": "Modern machine learning (ML) workloads increasingly rely on GPUs, yet achieving high end-to-end performance remains challenging due to dependencies on both GPU kernel efficiency and host-side settings. Although LLM-based methods show promise on automated GPU kernel generation, prior works mainly focus on single-kernel optimization and do not extend to end-to-end programs, hindering practical deployment.\n  To address the challenge, in this work, we propose StitchCUDA, a multi-agent framework for end-to-end GPU program generation, with three specialized agents: a Planner to orchestrate whole system design, a Coder dedicated to implementing it step-by-step, and a Verifier for correctness check and performance profiling using Nsys/NCU. To fundamentally improve the Coder's ability in end-to-end GPU programming, StitchCUDA integrates rubric-based agentic reinforcement learning over two atomic skills, task-to-code generation and feedback-driven code optimization, with combined rubric reward and rule-based reward from real executions. Therefore, the Coder learns how to implement advanced CUDA programming techniques (e.g., custom kernel fusion, cublas epilogue), and we also effectively prevent Coder's reward hacking (e.g., just copy PyTorch code or hardcoding output) during benchmarking. Experiments on KernelBench show that StitchCUDA achieves nearly 100% success rate on end-to-end GPU programming tasks, with 1.72x better speedup over the multi-agent baseline and 2.73x than the RL model baselines.",
+      "authors": [
+        "Shiyang Li",
+        "Zijian Zhang",
+        "Winson Chen",
+        "Yuebo Luo",
+        "Mingyi Hong",
+        "Caiwen Ding"
+      ],
+      "published": "2026-03-03T06:04:49Z",
+      "published_date": "2026-03-03 06:04:49+00:00",
+      "updated": "2026-03-03T06:04:49Z",
+      "categories": [
+        "cs.MA",
+        "cs.CL",
+        "cs.PL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2603.02637v1",
+      "url": "http://arxiv.org/abs/2603.02637v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.8,
+        "recency": 3.0,
+        "popularity": 1.6,
+        "quality": 1.6,
+        "recommendation": 9.2
+      },
+      "matched_domain": "智能体",
+      "matched_keywords": [
+        "agent",
+        "multi-agent",
+        "agentic",
+        "agent framework",
+        "cs.MA",
+        "cs.CL"
+      ],
+      "is_hot_paper": false
+    },
+    {
+      "id": "http://arxiv.org/abs/2602.19591v2",
+      "title": "Detecting High-Potential SMEs with Heterogeneous Graph Neural Networks",
+      "summary": "Small and Medium Enterprises (SMEs) constitute 99.9% of U.S. businesses and generate 44% of economic activity, yet systematically identifying high-potential SMEs remains an open challenge. We introduce SME-HGT, a Heterogeneous Graph Transformer framework that predicts which SBIR Phase I awardees will advance to Phase II funding using exclusively public data. We construct a heterogeneous graph with 32,268 company nodes, 124 research topic nodes, and 13 government agency nodes connected by approximately 99,000 edges across three semantic relation types. SME-HGT achieves an AUPRC of 0.621 0.003 on a temporally-split test set, outperforming an MLP baseline (0.590 0.002) and R-GCN (0.608 0.013) across five random seeds. At a screening depth of 100 companies, SME-HGT attains 89.6% precision with a 2.14 lift over random selection. Our temporal evaluation protocol prevents information leakage, and our reliance on public data ensures reproducibility. These results demonstrate that relational structure among firms, research topics, and funding agencies provides meaningful signal for SME potential assessment, with implications for policymakers and early-stage investors.",
+      "authors": [
+        "Yijiashun Qi",
+        "Hanzhe Guo",
+        "Yijiazhen Qi"
+      ],
+      "published": "2026-02-23T08:35:55Z",
+      "published_date": "2026-02-23 08:35:55+00:00",
+      "updated": "2026-02-27T06:35:57Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2602.19591v2",
+      "url": "http://arxiv.org/abs/2602.19591v2",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.3,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.0,
+        "recommendation": 9.07
+      },
+      "matched_domain": "图学习",
+      "matched_keywords": [
+        "graph neural network",
+        "heterogeneous graph",
+        "graph transformer",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "is_hot_paper": false
+    }
+  ]
+}

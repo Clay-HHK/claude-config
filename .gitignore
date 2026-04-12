@@ -1,0 +1,37 @@
+# Ephemeral / private / regenerable
+history.jsonl
+sessions/
+todos/
+plans/
+tasks/
+file-history/
+paste-cache/
+shell-snapshots/
+session-env/
+telemetry/
+cache/
+debug/
+ide/
+logs/
+statsig/
+plugins/
+backups/
+downloads/
+
+# Per-project memory & usage data
+projects/
+usage-data/
+
+# Cache files
+stats-cache.json
+mcp-needs-auth-cache.json
+
+# Excluded config
+statusline.sh
+settings.json.bak
+
+# OS
+.DS_Store
+
+# Internal
+.claude/
