@@ -26,8 +26,9 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
+import socket
 import time
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from urllib.request import urlopen, Request
 
 try:
@@ -54,8 +55,17 @@ def fetch_arxiv_metadata(arxiv_id: str) -> dict:
                 xml = r.read()
             break
         except HTTPError as e:
-            if e.code in (429, 503) and attempt < 4:
-                print(f"  arxiv rate-limited ({e.code}); sleeping {delay}s (attempt {attempt + 1})", file=sys.stderr)
+            # Retry on 429 (rate limit) and all 5xx (transient server-side)
+            if (e.code == 429 or 500 <= e.code < 600) and attempt < 4:
+                print(f"  arxiv transient HTTP {e.code}; sleeping {delay}s (attempt {attempt + 1})", file=sys.stderr)
+                time.sleep(delay)
+                delay *= 2
+                continue
+            raise
+        except (URLError, socket.timeout, TimeoutError) as e:
+            # Retry on network-level timeouts / DNS / connection errors
+            if attempt < 4:
+                print(f"  arxiv network error {type(e).__name__}; sleeping {delay}s (attempt {attempt + 1})", file=sys.stderr)
                 time.sleep(delay)
                 delay *= 2
                 continue
