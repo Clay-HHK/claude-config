@@ -26,7 +26,9 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from urllib.request import urlopen
+import time
+from urllib.error import HTTPError
+from urllib.request import urlopen, Request
 
 try:
     from dotenv import load_dotenv
@@ -42,9 +44,24 @@ NS = {
 
 
 def fetch_arxiv_metadata(arxiv_id: str) -> dict:
+    """Hit arXiv Atom API with User-Agent + exponential backoff on 429/5xx."""
     url = f"http://export.arxiv.org/api/query?id_list={arxiv_id}"
-    with urlopen(url, timeout=30) as r:
-        xml = r.read()
+    req = Request(url, headers={"User-Agent": "zotero-arxiv-ingest/0.1 (mailto:user@example.com)"})
+    delay = 5
+    for attempt in range(5):
+        try:
+            with urlopen(req, timeout=30) as r:
+                xml = r.read()
+            break
+        except HTTPError as e:
+            if e.code in (429, 503) and attempt < 4:
+                print(f"  arxiv rate-limited ({e.code}); sleeping {delay}s (attempt {attempt + 1})", file=sys.stderr)
+                time.sleep(delay)
+                delay *= 2
+                continue
+            raise
+    else:
+        sys.exit(f"arxiv {arxiv_id}: exhausted retries")
     root = ET.fromstring(xml)
     entry = root.find("atom:entry", NS)
     if entry is None:
@@ -164,7 +181,8 @@ def main() -> None:
     if not pdf_path.exists():
         pdf_path.parent.mkdir(parents=True, exist_ok=True)
         print(f"Downloading {meta['pdf_url']}")
-        with urlopen(meta["pdf_url"], timeout=60) as r, open(pdf_path, "wb") as f:
+        pdf_req = Request(meta["pdf_url"], headers={"User-Agent": "zotero-arxiv-ingest/0.1"})
+        with urlopen(pdf_req, timeout=60) as r, open(pdf_path, "wb") as f:
             f.write(r.read())
     else:
         print("(PDF already exists, skipping download)")
